@@ -1,69 +1,3 @@
-/*
-* - УНИВЕРСАЛЬНЫЙ СЕЛЕКТОР
-*/
-
-/* СЕЛЕКТОР ТЕГА */
-/* body {
-  background-color: black;
-  color: wheat;
-} */
-
-/* СЕЛЕКТОР КЛАССА */
-/* .full-document {
-  font-size: 30px;
-} */
-
-/* СЕЛЕКТОР ИДЕНТИФИКАТОРА */
-/* #header {
-  background: wheat;
-  color: black;
-} */
-/* СЕЛЕКТОР ПОТОМКА */
-/* .main-nav img {
-  border: 10px solid green;
-  width: 200px;
-} */
-
-/* СЕЛЕКТОР РЕБЕНКА */
-/* .main-nav > a {
-  border: 2px solid rgb(1, 8, 1);
-} */
-
-/* СЕЛЕКТОР АТРИБУТА */
-
-/* a[href="./index.html"]{
-  color: rgb(59, 177, 59);
-} */
-
-/*    REG GREEN BLUE
-rgb 0-255: 0-255; 0-255
-hex     00 00 00
-       0-9 a-f
-*/
-
-/*
-ранг СПЕЦИФИЧНОСТЬ
-0 - если через атрибут style
-0 - id (идентификатор)
-0 + 1 + 1 - class pseudo-class attribute
-0 - tag pseudo-element
-*/
-/* 0 0 2 0 */
-/*
-0 - если через атрибут style
-0 - id (идентификатор)
-0 + 1 + 1 + 1- class pseudo-class attribute
-0 - tag pseudo-element
-*/
-/* 0 0 3 0 */
-
-/* цвет основного текста {color: #212121;}
-вторичний цвет текста {color: #757575;}
-белий цвет текста кнопки {color: #FFFFFF;}
-акцент кнопки {color: #2196F3}
-основной {background: #E5E5E5;}
-вторичний цвет {background:#F5F4FA;} */
-
 :root {
   --primary-text-color: #212121;
   --title-text-color: #757575;
@@ -74,10 +8,9 @@ hex     00 00 00
   --black-bgc: #2f303a;
   --contacts-list-color: rgba(255, 255, 255, 0.6);
 }
-
-.full-document {
+body {
   color: var(--title-text-color);
-  font-family: -Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -85,16 +18,24 @@ hex     00 00 00
   background-color: var(--primary-white-color);
   text-decoration: none;
 }
-
-/* * {
-  padding: 0;
-  margin: 0%;
-} */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 .list {
   list-style: none;
 }
-ul {
+ul > li {
   list-style: none;
+  /* display: inline-block; */
+}
+li {
+  outline: 2px solid brown;
+  display: inline-block;
 }
 a {
   text-decoration: none;
@@ -104,61 +45,88 @@ h2,
 h3 {
   color: var(--primary-text-color);
 }
+
 button {
   font-family: inherit;
 }
-
+/* Header */
+.page-header {
+  outline: 2px solid brown;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  background-color: var(--white-button-color);
+}
 /* Site-nav */
 .logo {
   color: var(--accent-button-color);
-  font-family: Raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 24px 93px 23px 215px;
+  /* position: absolute; */
+  width: 145px;
+  height: 31px;
+  left: 215px;
+  top: 24px;
 }
 .logo-text {
   color: var(--primary-text-color);
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
 }
-.link {
-  color: var(--primary-text-color);
-}
-.site-nav.list {
+.site-nav a {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
-  color: var(--accent-button-color);
+.main-nav {
+  outline: 2px solid brown;
+  /* display: inline-block; */
 }
-.link.current {
+.main-nav .link-current {
   color: var(--accent-button-color);
+  padding: 32px 50px 32px 93px;
+  /* position: absolute; */
+  width: 49px;
+  height: 16px;
+  left: 453px;
+  top: 32px;
+  display: inline-block;
+  vertical-align: middle;
 }
-.auth-nav.list {
-  font-family: -Roboto, sans-serif;
+.site-nav .link {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 32px 50px 32px 50px;
+}
+.auth-nav a {
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+address {
+  font-style: normal;
+  display: inline-block;
+}
+.contacts-link {
   color: var(--title-text-color);
 }
-.auth-nav .link:hover,
-.auth-nav .link:focus {
+.main-nav a:hover,
+.address-nav a:hover,
+.main-nav a:focus,
+.address-nav a:hover {
   color: var(--accent-button-color);
 }
-
-/* Header */
-.page-header {
-  background-color: var(--white-button-color);
-}
-
 /* Hero*/
 .section-hero {
   background-color: var(--black-bgc);
@@ -173,19 +141,33 @@ button {
   text-align: center;
 }
 /* Feature */
-
 .feature-title {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
-
+.text-feature {
+  font-weight: 400;
+}
+/* .feature-list {
+  display: contents;
+} */
 /* Sample */
 .sample-title {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
 }
+/* .section-sample .computer {
+  width: 370px;
+  left: 215px;
+  top: 1061px;
+  border-radius: 0px;
+  position: absolute;
+  width: 370px;
+  height: 294px;
+  left: 215px;
+  top: 1061px;} */
 /* Workers */
 .section-workers {
   background-color: var(--secondary-white-color);
@@ -198,15 +180,15 @@ button {
 .name-workers {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.06;
+  line-height: 1.19;
   text-align: center;
 }
 .workers-list p {
   font-size: 16px;
   line-height: 1.19;
+  font-weight: 400;
   text-align: center;
 }
-
 /* Футер */
 .logo-text-footer {
   color: var(--white-button-color);
@@ -218,46 +200,67 @@ button {
   color: var(--contacts-list-color);
 }
 .contacts-list {
-  font-family: -Roboto, sans-serif;
-  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
 }
-
 .address {
   color: var(--white-button-color);
 }
-
+.address-list {
+  display: block;
+}
 /* Button*/
-.section-hero button {
+.section-hero .button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
   color: var(--white-button-color);
   background-color: var(--accent-button-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
   letter-spacing: 0.06em;
+  display: inline-block;
+  /* position: absolute;
+  width: 200px;
+  left: 700px;
+  top: 430px; */
 }
 /* Button Portfolio*/
-.button.primary {
+.filters .button-filter {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.63;
+  font-weight: 700;
+  background-color: var(--secondary-white-color);
+  color: var(--primary-text-color);
+  border-color: transparent;
+  border: none;
+  letter-spacing: 0.03em;
+}
+.button-filter:hover,
+.button-filter:focus {
   background-color: var(--accent-button-color);
   color: var(--white-button-color);
-  border-color: transparent;
-  letter-spacing: 0.03em;
-  border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
-.button.secondary {
-  color: var(--primary-text-color);
-  background-color: var(--secondary-white-color);
-  border-color: transparent;
-  letter-spacing: 0.03em;
   border-radius: 4px;
+}
+.filters {
+  text-align: center;
 }
 /*project Portfolio*/
 .project p {
+  color: var(--title-text-color);
   font-size: 16px;
   line-height: 1.88;
+  font-weight: 400;
 }
 .project-name {
   font-size: 18px;
@@ -268,18 +271,4 @@ button {
   background-color: var(--white-button-color);
   border: 1px solid #eeeeee;
   box-sizing: border-box;
-}
-
-.filters {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.63px;
-  text-align: center;
-  color: var(--primary-text-color);
-  background-color: var(--secondary-white-color);
-}
-.filters :hover,
-.filters :focus {
-  color: var(--primary-white-color);
-  background-color: var(--accent-button-color);
 }
