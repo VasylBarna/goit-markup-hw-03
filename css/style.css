@@ -31,10 +31,14 @@ html {
 }
 ul > li {
   list-style: none;
-  /* display: inline-block; */
+}
+ul {
+  display: inline-block;
+  vertical-align: middle;
 }
 li {
   outline: 2px solid brown;
+  vertical-align: middle;
   display: inline-block;
 }
 a {
@@ -58,6 +62,13 @@ button {
   line-height: 16px;
   letter-spacing: 0.02em;
   background-color: var(--white-button-color);
+  display: inline-block;
+  vertical-align: middle;
+  /* position: absolute; */
+  /* width: 1600px;
+  height: 80px;
+  left: 0px;
+  top: 0px; */
 }
 /* Site-nav */
 .logo {
@@ -68,17 +79,17 @@ button {
   line-height: 1.19;
   letter-spacing: 0.03em;
   display: inline-block;
-  vertical-align: bottom;
-  padding: 24px 93px 23px 215px;
-  /* position: absolute; */
+  vertical-align: middle;
+  /* padding: 24px 1240px 25px 215px; 
+  position: absolute;
   width: 145px;
   height: 31px;
   left: 215px;
   top: 24px;
-}
-.logo-text {
-  color: var(--primary-text-color);
-}
+} */
+
+.logo-text {color: var();}
+
 .site-nav a {
   font-weight: 500;
   font-size: 14px;
@@ -87,25 +98,45 @@ button {
   color: var(--primary-text-color);
 }
 .main-nav {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1200;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0;
   outline: 2px solid brown;
-  /* display: inline-block; */
 }
+
 .main-nav .link-current {
   color: var(--accent-button-color);
-  padding: 32px 50px 32px 93px;
-  /* position: absolute; */
+}
+
+/* .studio {
+padding: 32px 1098px 32px 453px;
+  position: absolute;
   width: 49px;
   height: 16px;
   left: 453px;
   top: 32px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.site-nav .link {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 32px 50px 32px 50px;
-}
+} */
+
+/* .portfolio {
+padding: 32px 971px 32px 552px;
+position: absolute;
+width: 77px;
+  height: 16px;
+  left: 552px;
+  top: 32px;
+} */
+/* .link-contacts {
+padding: 32px 853px 32px 679px;
+position: absolute;
+width: 68px;
+height: 16px;
+left: 679px;
+top: 32px;
+} */
+
 .auth-nav a {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -114,12 +145,32 @@ button {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-address {
+.address-nav {
   font-style: normal;
   display: inline-block;
+  vertical-align: middle;
+  width: 1200;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0;
 }
-.contacts-link {
+.mailto {
   color: var(--title-text-color);
+  /* position: absolute; */
+  /* width: 135px;
+  height: 16px;
+  left: 1078px;
+  top: 32px; */
+  /* padding: 32px 387px 32px 1078px; */
+}
+.tel {
+  color: var(--title-text-color);
+  /* position: absolute;
+  width: 122px;
+  height: 16px;
+  left: 1263px;
+  top: 32px;
+  padding: 32px 215px 32px 1263px; */
 }
 .main-nav a:hover,
 .address-nav a:hover,
@@ -130,6 +181,11 @@ address {
 /* Hero*/
 .section-hero {
   background-color: var(--black-bgc);
+  /* position: absolute; */
+  /* width: 1600px;
+  height: 600px;
+  left: 0px;
+  top: 80px; */
 }
 .hero-title {
   color: var(--white-button-color);
@@ -139,6 +195,12 @@ address {
   line-height: 1.36;
   text-transform: uppercase;
   text-align: center;
+  /* position: absolute; */
+  /* width: 696px;
+  height: 120px;
+  left: 452px;
+  top: 280px;
+  padding: 200px 452px 280px 452px; */
 }
 /* Feature */
 .feature-title {
@@ -190,7 +252,7 @@ address {
   text-align: center;
 }
 /* Футер */
-.logo-text-footer {
+.lt-footer {
   color: var(--white-button-color);
 }
 .footers {
@@ -227,7 +289,7 @@ address {
   text-align: center;
   letter-spacing: 0.06em;
   display: inline-block;
-  /* position: absolute;
+  /* position: absolute; 
   width: 200px;
   left: 700px;
   top: 430px; */
