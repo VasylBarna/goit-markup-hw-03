@@ -116,7 +116,7 @@ img {
 }
 /* Hero*/
 .section-hero {
-  background-color: var(--black-bgc);
+  /* background: var(--black-bgc); */
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -343,4 +343,32 @@ img {
   line-height: 1.88;
   font-weight: 400;
   margin: 0px auto;
+}
+
+/* Черновик */
+
+.section-hero {
+  width: 100%;
+  background: var(--black-bgc);
+  background-image: url(./images/ОльгаРепина.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-image: linear-gradient(top, rgba(222, 245, 34, 06));
+  background-image: radial-gradient(black 20%, red 40%, blue 60%);
+}
+/* .site-nav a::after {
+  display: block;
+  content: "";
+  width: inherit;
+  height: 3px;
+  background: lawngreen;
+} */
+
+.site-nav a:hover::after {
+  display: block;
+  content: "";
+  width: inherit;
+  height: 3px;
+  background: lawngreen;
 }
